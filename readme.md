@@ -55,7 +55,7 @@ docker run -d --name qr-generator \
   -e QR_CODE_FILENAME='exampleQR.png' \
   -e FILL_COLOR='blue' \
   -e BACK_COLOR='yellow' \
-  my-qr-app
+  qrprog
 ```
 Customizes the QR code generation settings through environment variables.
 
@@ -64,7 +64,7 @@ Customizes the QR code generation settings through environment variables.
 ```sh
 docker run -d --name qr-generator \
   -v /host/path/for/qr_codes:/app/qr_codes \
-  qrcode
+  qrprog
 ```
 Mounts a host directory to the container for storing QR codes.
 
