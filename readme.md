@@ -1,8 +1,8 @@
 # Docker and Python
 
-For this assignment you will be combining Docker with Python to create a program that generates a QR code PNG file that
-contains a URL. The QR code can be viewed with the camera on your phone to allow a user to click on it and send them to
-the target website. You must make your program generate a QR code that takes someone to your GitHub homepage i.e. https://github.com/kaw393939 <replace mine with yours>
+For this assignment I combined Docker with Python to create a program that generates a QR code PNG file that
+contains a URL. The QR code can be viewed with the camera on  phone to allow a user to click on it and send them to
+the target website. made a program which generate a QR code that takes someone to my GitHub homepage i.e.https://github.com/MohammedAhmeduddin
 
 ## Setup
 1.  Goto Docker.com and Install docker - [https://www.docker.com/get-started/](here)
@@ -11,12 +11,14 @@ the target website. You must make your program generate a QR code that takes som
 ## Submission Requirements:
 
 1. Add the QR code image that links to your own GitHub homepage that you generate to the readme.md file, so that it appears below.
+
 ![alt text](<Screenshot 2024-11-05 at 10.08.49 AM.png>)
 
 2.  Add an image of viewing the log of successfully creating the QR code below.
+
 ![alt text](<Screenshot 2024-11-05 at 10.15.45 AM.png>)
 
-## Lesson Video
+## Lesson Video (for reference)
 
 1.  [Scaling and Backend Software Engineering](https://youtu.be/v3LxCmYQVS4)
 3.  [Docker and Cloud Computing Intro](https://youtu.be/FpeGzRkBycw)
@@ -33,13 +35,13 @@ the target website. You must make your program generate a QR code that takes som
 ### Building the Image
 
 ```sh
-docker build -t my-qr-app .
+docker build -t qrprog .
 ```
-This command builds a Docker image named `my-qr-app` from the Dockerfile in the current directory (`.`).
+This command builds a Docker image named `qrprog` from the Dockerfile in the current directory (`.`).
 
 ### Running the Container with Default Settings
 ```sh
-docker run -d --name qr-generator my-qr-app
+docker run -d --name qr-generator qrprog
 ```
 
 Runs your QR code generator application in detached mode (`-d`) with a container named `qr-generator`.
@@ -62,7 +64,7 @@ Customizes the QR code generation settings through environment variables.
 ```sh
 docker run -d --name qr-generator \
   -v /host/path/for/qr_codes:/app/qr_codes \
-  my-qr-app
+  qrcode
 ```
 Mounts a host directory to the container for storing QR codes.
 
@@ -74,7 +76,7 @@ docker run -d --name qr-generator \
   -e FILL_COLOR='blue' \
   -e BACK_COLOR='yellow' \
   -v /host/path/for/qr_codes:/app/qr_codes \
-  my-qr-app
+  qrprog
 ```
 
 A comprehensive command that configures the QR code settings and mounts volumes for QR codes.
